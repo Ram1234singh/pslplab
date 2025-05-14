@@ -1,0 +1,419 @@
+//Matrix Addition without Function
+
+minput('Enter the no of rows of matrix');
+
+n=input("Enter the no of columns of matrix');
+
+A zeros(m,n);
+
+B-zeros(m,n);
+
+C-zeros(m,n);
+
+disp("Enter the elements of first matrix row wise')
+
+for i=1:m
+
+for j=1:n
+
+A(ij) input("); end
+
+end
+
+disp('Enter the elements of second matrix row wise')
+
+for i 1:m
+
+for j=1:n
+
+B(i,j) input("); end
+
+end
+
+for i=1:m
+
+for j In
+
+C(ij)-A(ij)+B(ij);
+
+end
+
+end
+
+disp('The first matrix is')
+
+disp(A)
+
+disp('The second matrix is')
+
+disp(B)
+
+disp(The sum of matrices is')
+
+disp(C)
+
+
+
+
+
+//Matrix transpose Without Function
+
+m = input('Enter the no of rows of matrix');...
+
+n = input('Enter the no of columns of matrix');
+
+A = zeros(m,n);
+
+B=zeros(m,n);
+
+disp('Enter the elements of matrix row wise')
+
+for i = 1 / m
+
+for j = 1 / n
+
+A(i,j) input(");
+
+end
+
+end
+
+for i = 1 / n
+
+for j = 1 / m
+
+B(i, j) = A(j, i)
+
+end
+
+end
+
+disp('The matrix is')
+
+disp(A)
+
+disp('The transposed matrix is')
+
+disp(B)
+
+
+
+
+
+
+
+Matrix Multiplication Without Function
+
+m = ('Enter the no of rows of first matrix)
+
+n = input('Enter the no of columns of first matrix');"
+
+p = input('Enter the no of rows of second matrix');
+
+q = input('Enter the no of columns of second matrix');
+
+if n = p
+
+'Matrices are conformable for multiplication') else
+
+disp('Matrices are not conformable for multiplication')" break;
+
+end
+
+A=zeros(m,n); B=zeros();
+
+C-zeros(mp);
+
+disp('Enter the elements of first matrix row wise')
+
+for i = 1 / m
+
+for j = 1 / n A(i, j) = underline input (^ prime prime ),
+
+end
+
+end
+
+disp('Enter the elements of second matrix row wise')
+
+for i = i / p
+
+for j = 1 / q B(i, j) = underline input ("); end
+
+end
+
+for i = 1 / m for j = 1 / q for k = 1 / n C(i,j) = C(i,j) + A(i, k) * B(k, j) end
+
+end
+
+end
+
+disp('The first matrix is')
+
+disp(A)
+
+disp('The second matrix is')
+
+disp(B)
+
+disp('The product of matrices is')
+
+disp(C)
+
+
+
+
+
+
+
+
+// Binomial 
+Clear all
+
+disp("enter no of observation") 
+n-input("/")
+ disp("value of p")
+ p=input("/")
+ disp("enter the value of x") 
+for i=1:n 
+X(1,3)=input("/") 
+end
+ disp("enter no of frequency") 
+for j=1:n 
+F(1,j)=input("/")
+ end
+
+EF-sum(F) binomial(p.n-1)
+
+disp("Given frequencies")
+
+disp(F)
+
+disp("Expected frequencies")
+
+disp(EF)
+
+plot2d3(0:n-1,F)
+
+plot2d(0:n-1,EF)
+
+
+
+
+
+//Regression 
+
+
+cle
+
+n-input('Enter the number of data points:')
+
+printf("Enter the values of xi')
+
+x(i)-input('\');
+
+printf("Enter the values of yi')
+
+for i = 1 / n end for i = 1 / n y(i)=input('\'); end for i = 1; n sumx-sumx+x(i);
+
+sumx=0;sumy-0;sumxy=0;sumx2=0;
+
+sumx2=sumx2+x(i)*x(i);
+
+sumy sumy+y(i);
+
+sumxy-sumxy+x(i)*y(i);
+
+end
+
+a-((sumx2*sumy-sumx*sumxy)* 1.0/(n*sumx2-sumx*sumx)*1.0);
+
+b=((n*sumxy-sumx*sumy)* 1.0/(n*sumx2-sumx*sumx)*1.0);
+
+
+printf('The line is Y=%3.3f+%3.3f X',a,b)
+
+x=(0:2:20)
+
+plot(x, a+b*x)
+
+
+
+
+
+///Chi-Square Test for Goodness of Fit
+
+// Input observed and expected frequencies
+
+observed [50,30,20]; // Replace with your dataset
+
+expected [40,40,20]; // Replace with your dataset
+
+// Check if lengths match if size (observed,"*") size(expected,"*")then error ("The observed and expected frequencies must have the same size."); end
+
+// Calculate chi-square statistic
+
+chi_square_stat sum(((observed-expected).^2)./expected);
+
+// Degrees of freedom
+
+n-length(observed);
+
+df-n-1;
+
+// Significance level
+
+alpha-0.05;
+
+// Critical value from chi-square distribution chi_square_critical-cdfchi("PQ",1-alpha,df);
+
+[33]
+
+১
+
+Output results
+
+disp("Chi-Square Statistic: "+string(chi_square_stat));
+
+disp("Degrees of Freedom: "+string(df));
+
+disp("Critical Value: "+string(chi_square_critical)):
+
+Decision
+
+ifchi_square stat chi square criticalthen
+
+disp("Reject the null hypothesis (10): The data does not fit the expected distribution."); else
+
+disp("Fail to reject the null hypothesis (10): The data fits the expected distribution."); end
+
+
+
+
+
+
+ele clear
+
+disp("enter no of observation") n-input(") disp("enter the vlaue of x") for i=1:n
+
+X(1,1)-input() end
+
+disp("enter no of frequency") for j=1:n F(1.j) input() end
+
+disp("Mean of the distribution is") M-sum(F.*X)/sum(F) disp(M) for i=1:n
+
+P(1,i) sum(F)*exp(-M)*M^(X(i))/factorial(X(i)) end
+
+disp("Expected frequencies are") disp(P) plot2d(X,P)
+
+
+
+
+
+
+
+/Clear workspace
+
+clear:
+
+cle;
+
+Input the dataser
+
+x=15.1,55,5.8,60,61,62,63,65,66,6.8]// Example data
+
+Number of data points
+
+n=length(x);
+
+//Step 1: Compute mean and stundard deviation
+
+mu-mean(x);
+
+sigma-stdev(x);
+
+21/65
+
+Step 2: Define the range for the normal distribution
+
+xmin=min(x)-1;
+
+xmax=max(x)+1;
+
+x_fit-linspace(xmin, xmax, 100);
+
+Step 3: Compute the fitted normal distribution
+
+pdf_fit=(1/(sigma*sqrt(2*%pt)))*exp(-((x_fit-mu).^2)/(2*sigma^2));
+
+//Step 4: Plot histogram and fitted normal distribution
+
+clf: Clear figure
+
+histplot(10,x);// Histogram with 10 bins
+
+plot(x_fit.pdf_fit*n*(xmax-xmin)/10,7-LineWidth,2);// Scale PDF to histogram
+
+xlabel("Data");
+
+ylabel( Frequency");
+
+title("Fitting a Normal Distribution");
+
+legend("Histogram", "Fitted Normal Distribution"],"location","upper_right);
+
+
+
+///X=[1,2,3,4,5]; Example dataser 1 Y=[2,4,6,8,10); Example dataset 2
+
+Number of data points
+
+n=length(X);
+
+Compute the means mean X mean(X); mean Y mean(Y);
+
+Compute the covariance covariance=sum((X-mean_X), (Y-mean_Y))/(n-1);
+
+//Compute the standard deviations
+
+std X-stdev(X); std Y-stdev(Y);
+
+Compute the correlation correlation covariance/(std_X std_Y);
+
+Display the results
+
+disp(Covariance");
+
+disp(covariance);
+
+disp( Correlation");
+
+disp(correlation);
+
+
+
+
+
+//Define the dataset
+
+data [5,7,8,9,6,7,9,8,10,7,6,8,9,5,6,7,8,9,10,7];
+
+// Define the umber of bins
+
+num_bins=5; Adjust this to change the bin granularity
+
+// Generate and display the histogram
+
+clf();// Clear any existing plots
+
+histplot(num_bins,data);
+
+title("Histogram of Dataset");
+
+xlabel(Data Values");
+
+ylabel("Frequency");
+
+Optionally, xave the plot
+
+//xx2png(gef(), "histogram.png");
