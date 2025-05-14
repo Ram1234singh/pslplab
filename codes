@@ -1,0 +1,123 @@
+//northwest 
+function[cost,x]=northwest_corner(cost_matrix, supply, demand)
+    [m,n]=size(cost_matrix);
+    x=zeros(m,n);
+    i=1;
+    j=1;
+    while i<=m && j<=n
+        if supply(i)<demand(j)
+            x(i,j)=supply(i);
+            demand(j)=demand(j)-supply(i);
+            supply(i)=0;
+            i=i+1;
+        elseif supply(i)>demand(j)
+            x(i,j)=demand(j);
+            supply(i)=supply(i)-demand(j);
+            demand(j)=0;
+            j=j+1;
+        else
+            x(i,j)=supply(i);
+            supply(i)=0;
+            demand(j)=0;
+            i=i+1;
+            j=j+1;
+        end
+    end
+    cost=sum(sum(x.*cost_matrix));
+end
+cost_matrix=[4,6,8;5,7,6;8,6,9];
+supply=[20;30;50];
+demand=[30,20,50];
+[cost,x]=northwest_corner(cost_matrix,supply,demand);
+disp(cost);
+disp(x);
+
+//LEAST COST METHOD CODE:-
+function [cost, allocation] = least_cost_method(cost_matrix, supply, demand)
+    [m, n] = size(cost_matrix);
+    allocation = zeros(m, n);
+    
+    while any(supply > 0) & any(demand > 0)
+        min_cost = min(cost_matrix(:));
+        [row, col] = find(cost_matrix == min_cost, 1);
+        
+        if supply(row) < demand(col)
+            allocation(row, col) = supply(row);
+            demand(col) = demand(col) - supply(row);
+            supply(row) = 0;
+        else
+            allocation(row, col) = demand(col);
+            supply(row) = supply(row) - demand(col);
+            demand(col) = 0;
+        end
+        
+        cost = sum(sum(allocation .* cost_matrix));
+    end
+end
+
+// Example usage:
+cost_matrix = [3 6 4; 7 2 8; 5 9 1];
+supply = [20; 30; 40];
+demand = [25 35 30];
+
+[cost, allocation] = least_cost_method(cost_matrix, supply, demand);
+disp(cost);
+disp(allocation);
+
+
+
+
+
+
+
+
+// Vam
+
+
+
+function [cost, assignment] = transportation_vam(supply, demand, costs)
+    m = length(supply);
+    n = length(demand);
+    assignment = zeros(m, n);
+    
+    while sum(supply) > 0 & sum(demand) > 0
+        u = zeros(1, m);
+        v = zeros(1, n);
+        min_cost = Inf;
+        min_i = 0;
+        min_j = 0;
+        
+        for i = 1:m
+            for j = 1:n
+                if assignment(i, j) == 0
+                    temp_cost = costs(i, j) - u(i) - v(j);
+                    if temp_cost < min_cost
+                        min_cost = temp_cost;
+                        min_i = i;
+                        min_j = j;
+                    end
+                end
+            end
+        end
+        
+ min_supply=min(supply(min_i), demand(min_j));
+assignment(min_i, min_j) = min_supply;
+supply(min_i)=supply(min_i) - min_supply; demand(min_j)=demand(min_j) - min_supply;
+        
+   if sum(supply == 0)<m
+            u(min_i)=costs(min_i, min_j) - v(min_j);
+        end
+  if sum(demand == 0)< n v(min_j)=costs(min_i,min_j)-u(min_i);
+        end
+    end cost=sum(sum(assignment .* costs));
+
+supply = [20, 30, 25];
+demand = [30, 25, 20];
+costs = [5 7 3; 4 6 8; 9 2 5];
+[cost, assignment] = transportation_vam(supply, demand, costs);
+disp(cost)
+disp(assignment)
+
+
+
+
